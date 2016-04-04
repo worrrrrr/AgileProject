@@ -3,8 +3,8 @@
  <h1 class="title">Home</h1>
  <button class="button button-clear icon ion-more" ng-click="more()"></button>
 </ion-header-bar>
- <ion-header-bar class="bar-subheader bar-dark">
-        <h1 class="title">Project</h1>
+ <ion-header-bar class="bar-subheader bar-positive">
+        <h1 class="title">Project: {{currentProject}}</h1>
       </ion-header-bar>
 <ion-content>
 <!-- <div class="list " height="50px">
@@ -29,11 +29,10 @@
  <ion-list 
           can-swipe="listCanSwipe">
   <ion-item ng-repeat="task in tasks" ng-if="task.flag==1"
-            class="card item item-avatar" ng-click="openTask(task)" high="10px">
-  <img ng-src="/img/wor.png">
+           class="card" ng-click="openTask(task)" high="10px">
     <h2 class={{task.state}}>{{task.tasktitle}} :{{task.state}}</h2>
     <div class="row">
-       <div class="col col-50"><p>{{task.piority}}</p></div>
+       <div class="col col-50"><p><b>{{task.priority}}</b></p></div>
       <div class="col"></div>
     <div class="col"><p>{{task.estimate}} Days</p></div>
     </div>  
@@ -43,5 +42,16 @@
     </ion-option-button>
   </ion-item>
 </ion-list>
+
+ <div class="card">
+        <div class="item item-divider">
+            Pie chart
+        </div>
+        <div class="item item-text-wrap">
+           <!--  <canvas id="myPiechart" class="chart chart-pie" chart-data="data" chart-labels="labels" char-color="colors" hart-options="chartoptions"></canvas>  -->
+            <canvas ng-jq id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels"  chart-legend="true" chart-options="options" ></canvas> 
+        </div>
+    </div>
+
 </ion-content>
 </ion-view>

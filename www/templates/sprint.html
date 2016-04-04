@@ -1,16 +1,16 @@
  <ion-header-bar>
  	<button class="button button-clear icon ion-navicon" ng-click="goProjectlist()"></button>
     <h1 class="title" ng-click="chooseSprint()">
-      Sprint {{sprint}}
+      Sprint {{sprint}} ▼
     </h1>
  	<button class="button button-clear icon ion-more" ng-click="more()"></button>
 </ion-header-bar>
 
 <ion-content>
 <div class="button-bar">
-	<a class="button button-royal" ng-click="showTodo()">Todo</a>
-	<a class="button button-calm" ng-click="showDoing()">Doing</a>
-	<a class="button button-balanced" ng-click="showDone()">Done</a>
+	<a class="button button-outline button-royal" ng-click="showTodo()" ng-class="{'active':buttontab==1}">Todo</a>
+	<a class="button button-outline button-calm" ng-click="showDoing()" ng-class="{'active':buttontab==2}">Doing</a>
+	<a class="button button-outline button-balanced" ng-click="showDone()" ng-class="{'active':buttontab==3}">Done</a>
 </div>
 
 <!-- <ion-list 
@@ -44,7 +44,7 @@ can-swipe="listCanSwipe" >
   <img ng-src="img/wor.png">
     <h2 class={{task.state}}>{{task.tasktitle}} :{{task.state}} </h2>
     <div class="row">
-       <div class="col col-50"><p>{{task.piority}}</p></div>
+       <div class="col col-50"><p><b>{{task.priority}}</b></p></div>
       <div class="col"></div>
     <div class="col"><p>{{task.estimate}} Days</p></div>
     </div>  

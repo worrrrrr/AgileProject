@@ -6,7 +6,7 @@ var tasks=[
   "sprint":1,
   "estimate":2,
   "state":"Done",
-  "piority":"Must Have",
+  "priority":"High",
   "flag":0
 },
 { "id":2,
@@ -15,7 +15,7 @@ var tasks=[
   "sprint":1,
   "estimate":1,
   "state":"Done",
-  "piority":"Nice To Have",
+  "priority":"High",
   "flag":0
 },
 { "id":3,
@@ -24,7 +24,7 @@ var tasks=[
   "sprint":1,
   "estimate":2,
   "state":"Doing",
-  "piority":"Must Have",
+  "priority":"Medium",
   "flag":1
 },
 { "id":4,
@@ -33,7 +33,7 @@ var tasks=[
   "sprint":1,
   "estimate":2,
   "state":"Doing",
-  "piority":"Must Have",
+  "priority":"High",
   "flag":1
 },
 { "id":5,
@@ -42,7 +42,7 @@ var tasks=[
   "sprint":1,
   "estimate":2,
   "state":"Todo",
-  "piority":"Must Have",
+  "priority":"High",
   "flag":0
 },
 { "id":6,
@@ -51,7 +51,7 @@ var tasks=[
   "sprint":1,
   "estimate":2,
   "state":"Todo",
-  "piority":"Must Have",
+  "priority":"Low",
   "flag":0
 },
 { "id":7,
@@ -60,7 +60,7 @@ var tasks=[
   "sprint":1,
   "estimate":2,
   "state":"Todo",
-  "piority":"Must Have",
+  "priority":"Low",
   "flag":0
 }
 ];

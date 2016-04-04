@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ionic','chart.js'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout,$http) {
   // Form data for the login modal
@@ -52,7 +52,22 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('HomeCtrl', function($scope, $ionicModal,$ionicActionSheet, $location, $timeout,$http) {
+
+
+.controller('HomeCtrl', function($scope, $ionicModal,$ionicActionSheet, $location, $timeout,$http, $rootScope) {
+
+  
+  $scope.labels = ["Todo", "Doing", "Done"];
+  $scope.data = [10, 5, 3];
+
+  $scope.options = {
+    tooltipEvents: [],
+    showTooltips: true,
+    tooltipCaretSize: 0,
+    onAnimationComplete: function () {
+        this.showTooltip(this.segments, true);
+    },
+};
 
   console.log("HomeCtrl")
   $scope.getTask=function(){
@@ -76,16 +91,18 @@ angular.module('starter.controllers', [])
   $scope.more = function() {
 
    // Show the action sheet
+
    var hideSheet = $ionicActionSheet.show({
+        titleText: 'Home',
      buttons: [
        { text: '<b>Add</b> Task' },
        { text: '<b>Add</b> Sprint' }
      ],
      //destructiveText: 'Delete',
-     titleText: 'More',
      cancelText: 'Cancel',
      cancel: function() {
-          // add cancel code..
+          console.log('CANCELLED');
+           // add cancel code..
         },
      buttonClicked: function(index) {
       if(index==0){
@@ -144,7 +161,7 @@ angular.module('starter.controllers', [])
 .controller('BacklogCtrl', function($scope, $ionicModal,$ionicActionSheet,$location, $timeout,$http) {
   console.log("USE BacklogCtrl")
 
-  $scope.piority="Must Have";
+  $scope.priority="High";
 
  $scope.shouldShowDelete = false;
  $scope.listCanSwipe = true;
@@ -201,16 +218,18 @@ angular.module('starter.controllers', [])
   };
 
 
-   $scope.showMH=function(){
-      $scope.piority="Must Have";
-   }
 
-   $scope.showNH=function(){
-      $scope.piority="Nice To Have";
+   $scope.showH=function(){
+      $scope.priority="High";
+      $scope.buttontab=1;
    }
-
-   $scope.showAV=function(){
-      $scope.piority="Average";
+   $scope.showM=function(){
+      $scope.priority="Medium";
+      $scope.buttontab=2;
+   }
+   $scope.showL=function(){
+      $scope.priority="Low";
+      $scope.buttontab=3;
    }
 
      $scope.more = function() {
@@ -345,14 +364,17 @@ angular.module('starter.controllers', [])
 
    $scope.showTodo=function(){
       $scope.state="Todo";
+      $scope.buttontab=1;
    }
 
    $scope.showDoing=function(){
       $scope.state="Doing";
+      $scope.buttontab=2;
    }
 
    $scope.showDone=function(){
       $scope.state="Done";
+      $scope.buttontab=3;
    }
 
 
@@ -495,7 +517,7 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('Project_listCtrl', function($scope, $ionicModal,$location, $timeout,$http) {
+.controller('Project_listCtrl', function($scope, $ionicModal,$location, $timeout,$http,$rootScope) {
   console.log("USE Project_listCtrl")
 
 
@@ -540,7 +562,9 @@ angular.module('starter.controllers', [])
  $scope.getProjectlist();
 
 
- $scope.goHome=function(){
+ $scope.goHome=function(projectname){
+  $rootScope.currentProject=projectname;
+  console.log($rootScope.currentProject);
   $location.path('/app/home');
   }
 })

@@ -3,13 +3,17 @@ var projects = [
     "id": 1,
     "projectname": "Agile",
     "name": "Gol D. Roger",
-    "position": "Pirate King"
+    "position": "Pirate King",
+    "Doing": {"task":2,"estimate":3},
+    "Todo": {"task":3,"estimate":6},
 },
 {
     "id": 2,
     "projectname": "Pupa",
     "name": "Sir Crocodile",
-    "position": "Former-Shichibukai"
+    "position": "Former-Shichibukai",
+    "Doing": {"task":2,"estimate":3},
+    "Todo": {"task":3,"estimate":6},
 },
 ];
  

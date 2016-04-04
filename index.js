@@ -6,9 +6,15 @@ var bodyParser = require('body-parser');
 var users = require('./users') 
 var tasks = require('./tasks') 
 var projects = require('./projects')
-//var io = require('socket.io')(server);
-//var _ = require('underscore');
-//var db = require('mongojs')("localhost/venueDB",['node']);
+
+
+/*var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
+var ObjectId = require('mongodb').ObjectID;
+var url = 'mongodb://localhost:27017/test';*/
+
+//var mongojs = require('mongojs')
+//var db = mongojs(connectionString, ['task'])
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
