@@ -7,6 +7,8 @@
   "dependencies": {
     "angular-filter": "~0.5.8",
     "angular-chart.js": "^0.9.0",
-    "angular": "1.5.3"
+    "angular": "1.5.3",
+    "underscore": "^1.8.3",
+    "angular-underscore-module": "^1.0.3"
   }
 }

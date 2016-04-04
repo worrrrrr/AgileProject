@@ -54,7 +54,10 @@ angular.module('starter.controllers', ['ionic','chart.js'])
 
 
 
-.controller('HomeCtrl', function($scope, $ionicModal,$ionicActionSheet, $location, $timeout,$http, $rootScope) {
+.controller('HomeCtrl', function($scope, $ionicModal,$ionicActionSheet, $location, $timeout,$http, $rootScope, _) {
+
+  console.log("HomeCtrl")
+  getTasks();
 
   
   $scope.labels = ["Todo", "Doing", "Done"];
@@ -62,21 +65,27 @@ angular.module('starter.controllers', ['ionic','chart.js'])
 
   $scope.options = {
     tooltipEvents: [],
-    showTooltips: true,
+    showTooltips: false,
     tooltipCaretSize: 0,
     onAnimationComplete: function () {
         this.showTooltip(this.segments, true);
     },
-};
+  };
 
-  console.log("HomeCtrl")
-  $scope.getTask=function(){
+
+
+
+  
+  function getTasks(){
   $http.get('http://localhost:8000/api/tasks').success(function(data){
     $scope.tasks=data;
     console.log($scope.tasks) 
-
-  })
- };
+   //console.log(_.values(_.countBy($scope.tasks,'state')));
+    
+    $scope.data=_.values(_.countBy($scope.tasks,'state'));
+  //  console.log($scope.data);
+    })
+  };
     $scope.goProjectlist=function(){
       $location.path('/project_list');
       console.log("goProjectList");
@@ -123,7 +132,6 @@ angular.module('starter.controllers', ['ionic','chart.js'])
  };
 
 
-  $scope.getTask();
 
   $ionicModal.fromTemplateUrl('templates/task.html', {
     scope: $scope

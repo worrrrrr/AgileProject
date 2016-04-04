@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers','starter.services','chart.js'])
+angular.module('starter', ['ionic', 'starter.controllers','starter.services','chart.js','underscore'])
 
 
 .run(function($ionicPlatform,$httpBackend) {
@@ -31,8 +31,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ch
     ChartJsProvider.setOptions({
       colours: ['#7401DF', '#01A9DB','#01DF3A'],
       responsive: false, 
-      scaleLabel: "<%=value%>",
-      scaleShowLabels: true,
+  
     });
     // Configure all line charts
     ChartJsProvider.setOptions('Line', {
