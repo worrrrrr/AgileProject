@@ -1,9 +1,11 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync')
 var nodemon = require('gulp-nodemon');
+var exec = require('child_process').exec;
 
 
-gulp.task('default', ['browser-sync'], function () {
+
+gulp.task('default', ['browser-sync','ionic'], function () {
 });
 
 gulp.task('browser-sync', ['nodemon'], function() {
@@ -26,3 +28,6 @@ gulp.task('nodemon', function (cb) {
 	});
 });
 
+gulp.task('ionic',function(){
+	exec('ionic serve');
+})
