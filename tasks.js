@@ -1,8 +1,8 @@
 
 var tasks=[
 { "id":1,
-  "tasktitle":"Task 1",
-  "description":"This is Task 1",
+  "tasktitle":"NODE/GIT",
+  "description":"Install and Setup",
   "sprint":1,
   "estimate":2,
   "state":"Done",
@@ -10,8 +10,8 @@ var tasks=[
   "flag":0
 },
 { "id":2,
-  "tasktitle":"Task 2",
-  "description":"This is Task 2",
+  "tasktitle":"Determine Server-side",
+  "description":"Determine Server-side Technology",
   "sprint":1,
   "estimate":1,
   "state":"Done",
@@ -19,17 +19,17 @@ var tasks=[
   "flag":0
 },
 { "id":3,
-  "tasktitle":"Task 3",
-  "description":"This is Task 3",
+  "tasktitle":"Design DataModel",
+  "description":"Design DataModel",
   "sprint":1,
   "estimate":2,
-  "state":"Doing",
-  "priority":"Medium",
-  "flag":1
+  "state":"Done",
+  "priority":"High",
+  "flag":0
 },
 { "id":4,
-  "tasktitle":"Task 4",
-  "description":"This is Task 4",
+  "tasktitle":"Determine Database",
+  "description":"Determine",
   "sprint":1,
   "estimate":2,
   "state":"Doing",
@@ -37,30 +37,30 @@ var tasks=[
   "flag":1
 },
 { "id":5,
-  "tasktitle":"Task 5",
-  "description":"This is Task 5",
+  "tasktitle":"Determine Client-Server",
+  "description":"Client-Server Communication ",
   "sprint":1,
   "estimate":2,
-  "state":"Todo",
+  "state":"Doing",
   "priority":"High",
-  "flag":0
+  "flag":1
 },
 { "id":6,
-  "tasktitle":"Task 6",
+  "tasktitle":"Basic Client",
   "description":"This is Task 6",
   "sprint":1,
   "estimate":2,
   "state":"Todo",
-  "priority":"Low",
+  "priority":"Medium",
   "flag":0
 },
 { "id":7,
-  "tasktitle":"Task 7",
+  "tasktitle":"Basic Server-side",
   "description":"This is Task 7",
   "sprint":1,
   "estimate":2,
   "state":"Todo",
-  "priority":"Low",
+  "priority":"Medium",
   "flag":0
 }
 ];

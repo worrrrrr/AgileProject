@@ -11,6 +11,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ch
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
@@ -127,7 +128,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ch
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
-
+   
   $ionicConfigProvider.navBar.alignTitle('center');
   $ionicConfigProvider.tabs.position('bottom');
 

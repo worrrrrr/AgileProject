@@ -58,11 +58,7 @@ angular.module('starter.controllers', ['ionic','chart.js'])
 
   console.log("HomeCtrl")
   getTasks();
-
   
-  $scope.labels = ["Todo", "Doing", "Done"];
-  $scope.data = [10, 5, 3];
-
   $scope.options = {
     tooltipEvents: [],
     showTooltips: false,
@@ -72,21 +68,36 @@ angular.module('starter.controllers', ['ionic','chart.js'])
     },
   };
 
-
-
-
   
+ // $scope.labels = ["Todo", "Doing", "Done"];
+ // $scope.data = [4, 3, 1];
+
+ 
+  
+
   function getTasks(){
   $http.get('http://localhost:8000/api/tasks').success(function(data){
     $scope.tasks=data;
-    console.log($scope.tasks) 
-   //console.log(_.values(_.countBy($scope.tasks,'state')));
-    
-    $scope.data=_.values(_.countBy($scope.tasks,'state'));
-  //  console.log($scope.data);
+    console.log($scope.tasks) ;
+    console.log(_.countBy($scope.tasks,'state'));
+
+    //console.log(_.groupBy($scope.datas.keys,_.countBy($scope.tasks,'state')));
+     var temp=_.countBy($scope.tasks,'state');
+    console.log(_.defaults(temp, {Todo: 0, Doing: 0,Done:0 }));
+    $scope.datas=temp;
+    console.log($scope.datas);
+    $scope.data =_.values($scope.datas);
+    $scope.labels=_.keys($scope.datas);
+    console.log($scope.labels,$scope.data)
+
+   
+
+  
+  
     })
   };
-    $scope.goProjectlist=function(){
+
+  $scope.goProjectlist=function(){
       $location.path('/project_list');
       console.log("goProjectList");
   }
@@ -106,6 +117,7 @@ angular.module('starter.controllers', ['ionic','chart.js'])
      buttons: [
        { text: '<b>Add</b> Task' },
        { text: '<b>Add</b> Sprint' }
+
      ],
      //destructiveText: 'Delete',
      cancelText: 'Cancel',
@@ -229,15 +241,15 @@ angular.module('starter.controllers', ['ionic','chart.js'])
 
    $scope.showH=function(){
       $scope.priority="High";
-      $scope.buttontab=1;
+      $scope.prioritystate=1;
    }
    $scope.showM=function(){
       $scope.priority="Medium";
-      $scope.buttontab=2;
+      $scope.prioritystate=2;
    }
    $scope.showL=function(){
       $scope.priority="Low";
-      $scope.buttontab=3;
+      $scope.prioritystate=3;
    }
 
      $scope.more = function() {
@@ -372,17 +384,17 @@ angular.module('starter.controllers', ['ionic','chart.js'])
 
    $scope.showTodo=function(){
       $scope.state="Todo";
-      $scope.buttontab=1;
+      $scope.taskState=1;
    }
 
    $scope.showDoing=function(){
       $scope.state="Doing";
-      $scope.buttontab=2;
+      $scope.taskState=2;
    }
 
    $scope.showDone=function(){
       $scope.state="Done";
-      $scope.buttontab=3;
+      $scope.taskState=3;
    }
 
 
@@ -458,6 +470,8 @@ angular.module('starter.controllers', ['ionic','chart.js'])
     //console.log($scope.task)  
     //$scope.closeAddTask();
   }
+
+  $scope
 
 })
 //

@@ -8,9 +8,9 @@
 
 <ion-content>
 <div class="button-bar">
-	<a class="button button-outline button-royal" ng-click="showTodo()" ng-class="{'active':buttontab==1}">Todo</a>
-	<a class="button button-outline button-calm" ng-click="showDoing()" ng-class="{'active':buttontab==2}">Doing</a>
-	<a class="button button-outline button-balanced" ng-click="showDone()" ng-class="{'active':buttontab==3}">Done</a>
+	<a class="button button-outline button-royal" ng-click="showTodo()" ng-class="{'active':taskState==1}">Todo</a>
+	<a class="button button-outline button-calm" ng-click="showDoing()" ng-class="{'active':taskState==2}">Doing</a>
+	<a class="button button-outline button-balanced" ng-click="showDone()" ng-class="{'active':taskState==3}">Done</a>
 </div>
 
 <!-- <ion-list 
@@ -42,7 +42,12 @@ can-swipe="listCanSwipe" >
   <ion-item ng-repeat="task in tasks | filter:{sprint:sprint}" ng-if="state==task.state"
             class="card item item-avatar" ng-click="openTask(task)" high="10px">
   <img ng-src="img/wor.png">
-    <h2 class={{task.state}}>{{task.tasktitle}} :{{task.state}} </h2>
+   
+     <div class="row">
+       <div class="col col-75"> <h2 class={{task.state}}>{{task.tasktitle}} </p></div>
+      <div class="col {{task.state}}">{{task.state}} </h2></div>
+   
+    </div> 
     <div class="row">
        <div class="col col-50"><p><b>{{task.priority}}</b></p></div>
       <div class="col"></div>

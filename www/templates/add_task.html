@@ -6,7 +6,7 @@
     </div>
   </ion-header-bar>
   <ion-content >
-  <label class="item item-input" >
+ <!--  <label class="item item-input" >
     <span class="input-label" >Task Name</span>
     <input type="text" ng-model="task.tasktitle">
   </label>
@@ -20,16 +20,38 @@
   <input type="number" min="0" ng-model="task.estimate"> 
     Days 
 </label>
-<button on-touch="onTouch()" class="button">Test</button>
-<button on-hold="onHold()" class="button">Test</button>
-
+<div class="button-bar">
+  <a class="button button-outline button-royal"  ng-click="task.state=1"  ng-class="{'active':task.state==1}" >Todo</a>
+  <a class="button button-outline button-calm"  ng-click="task.state=2" ng-class="{'active':task.state==2}">Doing</a>
+  <a class="button button-outline button-balanced" ng-click="task.state=3" ng-class="{'active':task.state==3}">Done</a>
+</div>
 <div class="item item-avatar">
   Assigned to Worakrit
     <img src="img/Wor.png" >  
   </div>
  
- 
 
-<br>
-  <button class="button button-small button-positive icon-left ion-plus" style="float: right;"  ng-click="addThisTask()">Add This Task</button>
-  </ion-content></ion-modal-view>
+ <button class="button button-small button-positive icon-left ion-plus" style="float: right;"  ng-click="addThisTask()">Add This Task</button>
+ 
+ -->
+
+<div class="list list-inset">
+  <label class="item item-input inset item-stacked-label">
+    <span class="input-label">Task Name</span>
+    <input type="text" placeholder="Task Name">
+  </label>
+  <label class="item item-input inset item-stacked-label">
+     <span class="input-label">Description</span>
+    <input type="text" placeholder="Descriptions">
+  </label>
+  <label class="item ">
+        <div class="button-bar">
+          <a class="button button-outline button-royal"  ng-click="task.state=1"  ng-class="{'active':task.state==1}" >Todo</a>
+          <a class="button button-outline button-calm"  ng-click="task.state=2" ng-class="{'active':task.state==2}">Doing</a>
+          <a class="button button-outline button-balanced" ng-click="task.state=3" ng-class="{'active':task.state==3}">Done</a>
+        </div>
+  </label>
+</div>
+  
+
+</ion-content></ion-modal-view>

@@ -28,7 +28,7 @@
 </div> --> 
  <ion-list 
           can-swipe="listCanSwipe">
-  <ion-item ng-repeat="task in tasks" ng-if="task.flag==1"
+  <ion-item ng-repeat="task in tasks" ng-if="task.flag==1||task.state=='Doing'"
            class="card" ng-click="openTask(task)" high="10px">
     <h2 class={{task.state}}>{{task.tasktitle}} :{{task.state}}</h2>
     <div class="row">
